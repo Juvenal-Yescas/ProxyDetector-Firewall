@@ -57,7 +57,7 @@ class ProxyDetectorFirewall:
             if not ip:  # If line is empty then end of file reached
                 break
 
-            if self.__db.is_proxy(ip) is 1:
+            if self.__db.is_proxy(ip) == 1:
                 logging.debug('%s -> is an anonymous Proxy', ip)
                 file_output.write('%s\r\n' % self.__firewall.getFormat(ip))
             else:
