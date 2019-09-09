@@ -1,0 +1,7 @@
+# -------------------------------------------------------
+# Free IP2Proxy Firewall List
+# https://lite.ip2location.com/ip2proxy-lite
+# [Important] Please update this list every month
+# -------------------------------------------------------
+iptables -A INPUT -s 104.40.177.48 -j DROP
+iptables -A INPUT -s 1.2.3.4 -j DROP

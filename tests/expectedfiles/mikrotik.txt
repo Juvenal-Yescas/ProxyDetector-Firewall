@@ -1,0 +1,8 @@
+# -------------------------------------------------------
+# Free IP2Proxy Firewall List
+# https://lite.ip2location.com/ip2proxy-lite
+# [Important] Please update this list every month
+# -------------------------------------------------------
+/ip firewall address-list
+add address=104.40.177.48 comment="Proxy Anonymous" list=IP2Location
+add address=1.2.3.4 comment="Proxy Anonymous" list=IP2Location
