@@ -34,7 +34,7 @@ jobs:
       run: |
         wget -q ${{ secrets. SOURCE_DATABASE }}
         unzip IP2PROXY-LITE-PX1.BIN.ZIP -x *.TXT
-        mv IP2PROXY-LITE-PX1.BIN proxydetectionfirewall/data/
+        mv IP2PROXY-LITE-PX1.BIN proxydetectorfirewall/data/
 
     - name: Test with pytest
       run: |
