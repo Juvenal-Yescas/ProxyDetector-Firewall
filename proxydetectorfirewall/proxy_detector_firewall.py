@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import IP2Proxy
 import os
+import sys
 import logging
 logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+
+import IP2Proxy
 
 try:
     from format.mikrotik import Mikrotik
@@ -22,16 +24,18 @@ class ProxyDetectorFirewall:
         self.__db = IP2Proxy.IP2Proxy()
         path = os.getcwd()
         self.__db.open(
-            path+"/proxydetectorfirewall/data/IP2PROXY-LITE-PX1.BIN")
+            path+"/proxydetectorfirewall/data/IP2PROXY.BIN")
 
     def detect_anonymous(self, file_list_ip, format_firewall, name_file_output):
         self.__firewall = self.__get_firewall(format_firewall)
 
+        # if self.__firewall == None:
+            # 
         try:
             self.__firewall.get_header()
         except AttributeError:
-            print("Oops! The firewall format is not valid.")
-            exit(1)
+            print('Oops! The firewall format is not valid.')
+            sys.exit(1)
 
         logging.debug(self.__firewall)
 
@@ -48,7 +52,7 @@ class ProxyDetectorFirewall:
         
         except FileNotFoundError:
             print("Could not open input file.")
-            exit(1)
+            sys.exit(1)
 
         while True:
             ip = list_ip.readline()  # Get next line from file
