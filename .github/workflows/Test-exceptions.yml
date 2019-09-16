@@ -78,8 +78,4 @@ jobs:
     - name: Test exceptions with pytest
       run: |
         pip -q install pytest
-<<<<<<< HEAD
         pytest tests/exceptions_test.py
-=======
-        pytest tests/exceptions_test.py
->>>>>>> develop

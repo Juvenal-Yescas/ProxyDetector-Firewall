@@ -12,17 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-<<<<<<< HEAD
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-=======
     - name: Set up Python 3
       uses: actions/setup-python@v1
       with:
         python-version: 3
->>>>>>> develop
 
     - name: Install dependencies
       run: |
@@ -41,11 +34,7 @@ jobs:
       run: |
         wget -q ${{ secrets. SOURCE_DATABASE }}
         unzip IP2PROXY-LITE-PX1.BIN.ZIP -x *.TXT
-<<<<<<< HEAD
-        mv IP2PROXY-LITE-PX1.BIN proxydetectorfirewall/data/
-=======
         mv IP2PROXY-LITE-PX1.BIN proxydetectorfirewall/data/IP2PROXY.BIN
->>>>>>> develop
 
     - name: Test with pytest
       run: |
