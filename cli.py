@@ -1,16 +1,17 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 import sys
-import logging
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
-                    level=logging.DEBUG)
-
+import argparse
 from proxydetectorfirewall.proxy_detector_firewall import ProxyDetectorFirewall
 
 if __name__ == '__main__':
-    file_list_ip = str(sys.argv[1])
-    format_firewall = str(sys.argv[2])
-    file_output = str(sys.argv[3])
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('-i', '--input',type=str, required=True, help="File containing an ip list")
+    parser.add_argument('-f', '--firewall',type=str, required=True, choices=['iptables', 'mikrotik', 'cisco-acl'], help="Firewall, output format for the rules.")
+    parser.add_argument('-o', '--output', type=str, default='Output.txt', help="Output file with the rules to block the ips detected as a proxy.")
+    
+    args = parser.parse_args()
+
     af = ProxyDetectorFirewall()
-    af.detect_anonymous(file_list_ip, format_firewall, file_output)
+    af.detect_anonymous(args.input, args.firewall, args.output)
