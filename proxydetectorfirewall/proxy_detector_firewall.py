@@ -41,7 +41,7 @@ class ProxyDetectorFirewall:
             print('Oops! The firewall format is not valid.')
             sys.exit(1)
 
-        logging.debug(self.__firewall)
+        # logging.debug(self.__firewall)
 
         file_output = open(name_file_output, "w+")
         file_output.write('%s\r\n' % '# -------------------------------------------------------'
@@ -78,9 +78,9 @@ class ProxyDetectorFirewall:
         list_formats = {
             'mikrotik': Mikrotik(),
             'iptables': IpTables(),
-            'ciscoacl': CiscoACL(),
+            'cisco-acl': CiscoACL(),
             'cidr': Cidr(),
-            'ciscobitbucket': CiscoBitBucket(),
-            'juniperjunos': JuniperJunos()
+            'cisco-bitbucket': CiscoBitBucket(),
+            'juniper-junos': JuniperJunos()
         }
         return list_formats.get(format_firewall, None)
