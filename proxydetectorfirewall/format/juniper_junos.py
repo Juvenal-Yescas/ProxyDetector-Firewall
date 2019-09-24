@@ -6,10 +6,10 @@ try:
 except ImportError:
     from proxydetectorfirewall.format.format import Format
 
-class CiscoACL(Format):
+class JuniperJunos(Format):
 
     def getFormat(self, ip):
-        firewall_rule = 'deny ip {} any'.format(
+        firewall_rule = 'set {}/32'.format(
             ip
         )
         return firewall_rule

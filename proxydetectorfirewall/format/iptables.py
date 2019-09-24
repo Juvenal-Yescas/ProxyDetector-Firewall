@@ -6,7 +6,6 @@ try:
 except ImportError:
     from proxydetectorfirewall.format.format import Format
 
-
 class IpTables(Format):
 
     def getFormat(self, ip):
