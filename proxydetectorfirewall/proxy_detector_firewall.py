@@ -13,10 +13,16 @@ try:
     from format.mikrotik import Mikrotik
     from format.iptables import IpTables
     from format.cisco_acl import CiscoACL
+    from format.cidr import Cidr
+    from format.cisco_bit_bucket import CiscoBitBucket
+    from format.juniper_junos import JuniperJunos
 except ImportError:
     from proxydetectorfirewall.format.mikrotik import Mikrotik
     from proxydetectorfirewall.format.iptables import IpTables
     from proxydetectorfirewall.format.cisco_acl import CiscoACL
+    from proxydetectorfirewall.format.cidr import Cidr
+    from proxydetectorfirewall.format.cisco_bit_bucket import CiscoBitBucket
+    from proxydetectorfirewall.format.juniper_junos import JuniperJunos
 
 class ProxyDetectorFirewall:
 
@@ -29,8 +35,6 @@ class ProxyDetectorFirewall:
     def detect_anonymous(self, file_list_ip, format_firewall, name_file_output):
         self.__firewall = self.__get_firewall(format_firewall)
 
-        # if self.__firewall == None:
-            # 
         try:
             self.__firewall.get_header()
         except AttributeError:
@@ -74,6 +78,9 @@ class ProxyDetectorFirewall:
         list_formats = {
             'mikrotik': Mikrotik(),
             'iptables': IpTables(),
-            'ciscoacl': CiscoACL()
+            'ciscoacl': CiscoACL(),
+            'cidr': Cidr(),
+            'ciscobitbucket': CiscoBitBucket(),
+            'juniperjunos': JuniperJunos()
         }
         return list_formats.get(format_firewall, None)

@@ -6,10 +6,10 @@ try:
 except ImportError:
     from proxydetectorfirewall.format.format import Format
 
-class CiscoACL(Format):
+class Cidr(Format):
 
     def getFormat(self, ip):
-        firewall_rule = 'deny ip {} any'.format(
+        firewall_rule = '{}/32'.format(
             ip
         )
         return firewall_rule
