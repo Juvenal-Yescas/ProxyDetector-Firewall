@@ -4,5 +4,7 @@
 # [Important] Please update this list every month
 # -------------------------------------------------------
 /ip firewall address-list
-add address=104.40.177.48 comment="Proxy Anonymous" list=IP2Location
-add address=1.2.3.4 comment="Proxy Anonymous" list=IP2Location
+add address=118.97.180.132 comment="Proxy Anonymous" list=IP2Location
+add address=86.110.172.54 comment="Proxy Anonymous" list=IP2Location
+add address=180.214.245.193 comment="Proxy Anonymous" list=IP2Location
+add address=37.26.136.181 comment="Proxy Anonymous" list=IP2Location

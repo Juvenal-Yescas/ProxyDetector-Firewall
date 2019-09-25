@@ -3,5 +3,7 @@
 # https://lite.ip2location.com/ip2proxy-lite
 # [Important] Please update this list every month
 # -------------------------------------------------------
-deny ip 104.40.177.48 any
-deny ip 1.2.3.4 any
+deny ip 118.97.180.132 any
+deny ip 86.110.172.54 any
+deny ip 180.214.245.193 any
+deny ip 37.26.136.181 any
