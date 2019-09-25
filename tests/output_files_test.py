@@ -33,6 +33,6 @@ def test_iptables():
     assert(same_files)
 
 def test_cisco_acl():
-    proxy_detector_f.detect_anonymous(path+'/tests/ExampleProxyList.txt','ciscoacl',path+'/tests/cisco_acl_output.txt')
+    proxy_detector_f.detect_anonymous(path+'/tests/ExampleProxyList.txt','cisco-acl',path+'/tests/cisco_acl_output.txt')
     same_files=compare_output(path+'/tests/expectedfiles/cisco_acl.txt',path+'/tests/cisco_acl_output.txt')
     assert(same_files)
