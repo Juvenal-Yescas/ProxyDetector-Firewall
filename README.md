@@ -103,7 +103,7 @@ python3 cli.py -i ExampleProxyList.txt -f mikrotik -o mikrotik.txt
 
 ## Run tests
 
-Tests on [Github Action](https://github.com/Juvenal-Yescas/ip2location-action/actions)
+Tests on [Github Action](https://github.com/Juvenal-Yescas/ProxyDetector-Firewall/actions)
 
 The `pytest` module is necessary
 
